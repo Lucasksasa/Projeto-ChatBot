@@ -1,29 +1,96 @@
-<h2>Projeto de Chat Boot</h2>
-<p>A ideia é criar um software de marcação de consultas, onde localizamos qual é o paciente, em qual clínica vamos marcar,  e após marcar aparecer o dia e a hora que o paciente está marcado.
+# Projeto HEALTH HUB - CHATBOT
 
- O sistema é dividido em duas partes.  Sendo, a primeira para um auxiliar ou ao próprio profissional da saúde, fazendo, assim, as marcações e a gestão das agendas. A segunda é o do profissional da saúde, onde ele pode fazer a evolução do prontuário do que foi realizado na consulta/exame.<br>
+## Integrantes do Grupo
+| Nome              |
+| ----------------- |
+| Guilherme Silva   |
+| Yara Rosa         |
+| Lucas Ferrari     |
+| Yasmin Alves      |
+| Izabela Gomes     |
 
-O objetivo do sistema é facilitar o dia - a - dia de uma clínica, na questão de marcação/gestão de agendas e evolução de prontuário, sendo um sistema completo, evitando a dependência de outros aplicativos e sistemas, filas e desgastes desnecessários, tanto por parte do cliente, quanto para o profissional da saúde em questão.
-</p>
+## Descrição
+Criamos um chat bot de WhatsApp para fazer marcação de consultas, através do banco de dados do login, para localizar qual é o paciente, com qual profissional poderar marcar, e após, vai aparecer o dia e a hora que o paciente está marcado.
 
-| Integrantes do Grupo |
-| -------------------- |
-| Guilherme Silva      |
-| Yara Rosa           |
-| Lucas Ferrari       |
-| Yasmin Alves        |
-| Izabela Gomes       |
+## Objetivo
+O objetivo do sistema é facilitar o dia-a-dia de uma clínica na questão de marcação/gestão de agendas de consultas, sendo um sistema completo, evitando a dependência de outros aplicativos e sistemas, desgastes desnecessários, tanto por parte do cliente quanto para o profissional da saúde em questão.
 
-<h3>Criação de Login</h3>
-<p>Foi criado com as linguagens HTML, CSS. Para a conexão de dados da página, usamos MySQL para a criação do script e php.</p>
 
-Faça Login:
-![image](https://github.com/user-attachments/assets/a2950d73-6ea4-4627-a598-449b9943945e)
+### Principais Classes e Interfaces
+- **dp_connection.php**: Conexão com o banco de dados.
+- **login.php**: Lógica de autenticação de usuários.
 
-Criar Conta:
-![image](https://github.com/user-attachments/assets/4fbc03d0-ebf9-45a9-9a69-bcd8d74d7576)
+## Uso
 
-esqueci senha:
-![image](https://github.com/user-attachments/assets/751b5d4b-a4a2-4cae-a8b3-2c5f5f4ddee9)
+1. Configure o banco de dados utilizando o script `Script.sql`.
+2. Configure a conexão com o banco de dados no arquivo `dp_connection.php`.
+3. Abra o arquivo `index.html` no seu navegador para acessar a interface principal.
+4. Utilize as páginas de login (`Login.html`) e registro (`register.php`) para gerenciar usuários.
 
-ainda em processo...
+### Exemplo de Código
+
+```php
+// Exemplo de conexão com o banco de dados
+include 'dp_connection.php';
+
+$conn = OpenCon();
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+CloseCon($conn);
+```
+
+# Chat
+
+Um chatbot simples construído com Node.js que utiliza a biblioteca `whatsapp-web.js` para interagir com o WhatsApp.
+
+## Tecnologias Utilizadas
+
+- **Node.js**: Ambiente de execução para JavaScript no lado do servidor.
+- **Dependências**:
+  - `qrcode-terminal`: Para gerar códigos QR no terminal.
+  - `whatsapp-web.js`: Biblioteca para interagir com a API do WhatsApp Web.
+  - `mysql2`: Para fazer a conexão e alterações no banco de dados.
+  - **MySQL**: Banco de dados.
+
+## Pré-requisitos
+
+Antes de começar, você precisará ter o Node.js instalado em sua máquina. Você pode baixar a versão mais recente do Node.js (Para funcionar precisa ser da versão 18 pra frente.) [aqui](https://nodejs.org/).
+
+## Instalação
+
+1. **Clone o repositório**:"
+   ```bash
+   git clone https://github.com/seu-usuario/chat.git
+   cd chat
+
+2. Instale Dependencias  
+
+npm install whatsapp-web.js
+
+npm install qrcode-terminal
+
+npm install mysql2
+
+## Configuração
+
+3. Configure seu chat 
+Abra o arquivo main.js e faça as configurações necessárias conforme a sua necessidade.
+
+## Execução
+
+4.Para executar:
+Digite:node main.js
+
+Você verá um código QR no terminal. Escaneie este código com o aplicativo WhatsApp no seu celular.
+
+Uma vez que a conexão for estabelecida, seu chatbot estará pronto para ser utilizado!
+
+## Guia
+
+Guia de como funciona
+message.body: são as mensagens do usuário que o chat irá ler para executar a mensagem que ele irá enviar.
+message.from: são as mensagens que o chat envia apos ler a mensagem enviada do usuário.
